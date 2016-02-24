@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteCond %(REQUEST_FILENAME) !-d
+RewriteCond %(REQUEST_FILENAME) !-f
+RewriteCond %(REQUEST_FILANAME) !-l
+RewriteRule ^(.*)\.css$ $1.css [L]
+RewriteRule ^(.*)\.php$ $1.php [L]
+RewriteRule ^(.*)\.js$ $1.js [L]
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
